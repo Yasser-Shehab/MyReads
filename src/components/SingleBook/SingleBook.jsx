@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import BookShelfChanger from "../BookShelfChanger/BookShelfChanger";
 
 function SingleBook({ book, shelf, handleMoveBook }) {
@@ -13,14 +14,16 @@ function SingleBook({ book, shelf, handleMoveBook }) {
     <li>
       <div className="book">
         <div className="book-top">
-          <div
-            className="book-cover"
-            style={{
-              width: 128,
-              height: 193,
-              backgroundImage: `url(${book.imageLinks ? book.imageLinks.smallThumbnail : ""})`,
-            }}
-          ></div>
+          <Link to={`bookDetails/${id}`}>
+            <div
+              className="book-cover"
+              style={{
+                width: 128,
+                height: 193,
+                backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : ""})`,
+              }}
+            ></div>
+          </Link>
           <BookShelfChanger value={value} handleChange={handleChange} />
         </div>
         <div className="book-title">{title}</div>

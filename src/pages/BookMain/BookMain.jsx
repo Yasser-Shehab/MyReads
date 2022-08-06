@@ -92,6 +92,7 @@ function BookMain() {
           }
         />
         <Route path="bookDetails/:id" element={<BookDetails />} />
+        <Route path="search/bookDetails/:id" element={<BookDetails />} />
       </Routes>
     </div>
   );

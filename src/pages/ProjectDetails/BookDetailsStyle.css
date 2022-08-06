@@ -1,0 +1,40 @@
+.book-container {
+  display: grid;
+  height: 100vh;
+}
+
+.book-details {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  max-width: 90vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.book-image > img {
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.notFound-image > img {
+  height: 300px;
+  width: 200px;
+}
+
+.book-Info {
+  margin-left: 2rem;
+}
+.book-Info p,
+h3 {
+  font-size: 2rem;
+  margin: 0;
+  color: rgb(47, 47, 47);
+}
+
+.details {
+  margin-top: 0.5rem;
+}

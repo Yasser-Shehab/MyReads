@@ -9818,7 +9818,7 @@
     "schema-utils" "^3.0.0"
     "semver" "^7.3.2"
 
-"sass@^1.3.0", "sass@^1.54.3":
+"sass@^1.3.0":
   "integrity" "sha512-fLodey5Qd41Pxp/Tk7Al97sViYwF/TazRc5t6E65O7JOk4XF8pzwIW7CvCxYVOfJFFI/1x5+elDyBIixrp+zrw=="
   "resolved" "https://registry.npmjs.org/sass/-/sass-1.54.3.tgz"
   "version" "1.54.3"
