@@ -10,5 +10,7 @@ The Completed MyRead Project for Udacity final assesment
 ## Content that been used on this Project
 
 Lodash : https://www.upbeatcode.com/react/how-to-use-lodash-in-react/
+
 useCallBack : https://reactjs.org/docs/hooks-reference.html#usecallback
+
 Changing Value & Searching : https://stackoverflow.com/questions/68575300/search-bar-value-update-and-search
