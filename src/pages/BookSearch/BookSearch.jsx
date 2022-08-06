@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SingleBook from "../../components/SingleBook/SingleBook";
 
 function BookSearch({ handleSearch, books, storedBooks, handleMoveBook, handleBookSearch }) {
+  console.log(books);
   //Handling Both Change and Search
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
@@ -12,17 +13,19 @@ function BookSearch({ handleSearch, books, storedBooks, handleMoveBook, handleBo
   };
 
   useEffect(() => {
-    const updatedBooks = books.map((book) => {
-      storedBooks.map((stored) => {
-        if (stored.id === book.id) {
-          book.shelf = stored.shelf;
-        }
-        return stored;
+    if (!books.error) {
+      const updatedBooks = books.map((book) => {
+        storedBooks.map((stored) => {
+          if (stored.id === book.id) {
+            book.shelf = stored.shelf;
+          }
+          return stored;
+        });
+        return book;
       });
-      return book;
-    });
 
-    setSearchResult(updatedBooks);
+      setSearchResult(updatedBooks);
+    }
   }, [books]);
 
   return (

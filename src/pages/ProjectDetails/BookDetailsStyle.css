@@ -6,6 +6,7 @@
 .book-details {
   display: flex;
   margin: auto;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 90vh;
   justify-content: center;

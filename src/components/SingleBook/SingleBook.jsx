@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import BookShelfChanger from "../BookShelfChanger/BookShelfChanger";
 
 function SingleBook({ book, shelf, shelfTitle, handleMoveBook }) {
   const [value, setValue] = useState(shelf);
-  console.log(shelf);
-  const { id, title, authors } = book;
+  const { id, authors } = book;
   const handleChange = (event) => {
     setValue(event.target.value);
     handleMoveBook(book, event.target.value);
