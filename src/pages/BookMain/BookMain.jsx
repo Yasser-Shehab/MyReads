@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import BookSearch from "../BookSearch/BookSearch";
 
 import BookDetails from "../ProjectDetails/BookDetails";
+import NotFound from "../../components/NotFound/NotFound";
 
 function BookMain() {
   const [showSearchPage, setShowSearchpage] = useState(false);
@@ -93,6 +94,7 @@ function BookMain() {
         />
         <Route path="bookDetails/:id" element={<BookDetails />} />
         <Route path="search/bookDetails/:id" element={<BookDetails />} />
+        <Route path={"*"} element={<NotFound />} />
       </Routes>
     </div>
   );

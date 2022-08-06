@@ -47,11 +47,20 @@ h3 {
   border-radius: 10px;
   padding: 0.7rem 1rem;
   font-size: 1.5rem;
-  background-color: #4bbe4f;
+  background-color: #85f189;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .back-button:hover {
-  background-color: #90d492;
+  background-color: #70c873;
+}
+
+.spinner-container {
+  display: grid;
+  height: 100vh;
+}
+
+.spinner {
+  margin: auto;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import notFound from "./assets/Images/notFound.jpg";
 import { useParams, useNavigate } from "react-router-dom";
+import spinner from "./assets/gif/Magnify-1s-200px.gif";
 import { get } from "../../BooksAPI";
 
 import "./BookDetailsStyle.css";
@@ -36,8 +37,10 @@ function BookDetails() {
 
   if (isLoading) {
     return (
-      <div>
-        <h1>Loading</h1>
+      <div className="spinner-container">
+        <div className="spinner">
+          <img src={spinner} />
+        </div>
       </div>
     );
   } else {
