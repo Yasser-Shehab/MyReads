@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import SingleBook from "../../components/SingleBook/SingleBook";
 
 function BookSearch({ handleSearch, books, storedBooks, handleMoveBook, handleBookSearch }) {
-  console.log(books);
   //Handling Both Change and Search
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
