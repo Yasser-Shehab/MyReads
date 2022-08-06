@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import SingleBook from "../SingleBook/SingleBook";
+import { Link } from "react-router-dom";
+import SingleBook from "../../components/SingleBook/SingleBook";
 
 function BookSearch({ handleSearch, books, handleMoveBook, handleBookSearch }) {
+  console.log(books);
   //Handling Both Change and Search
   const [searchTerm, setSearchTerm] = useState("");
   const handleChange = (event) => {
@@ -11,9 +13,9 @@ function BookSearch({ handleSearch, books, handleMoveBook, handleBookSearch }) {
   return (
     <div className="search-books">
       <div className="search-books-bar">
-        <a className="close-search" onClick={handleSearch}>
+        <Link className="close-search" to="/">
           Close
-        </a>
+        </Link>
         <div className="search-books-input-wrapper">
           <input
             value={searchTerm}
