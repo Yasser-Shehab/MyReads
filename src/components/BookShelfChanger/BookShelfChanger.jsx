@@ -2,7 +2,7 @@ import React from "react";
 
 function BookShelfChanger({ value, handleChange }) {
   const { title, name } = value;
-  console.log(title);
+
   return (
     <div className="book-shelf-changer">
       <select value={title} onChange={handleChange}>

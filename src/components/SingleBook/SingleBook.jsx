@@ -18,7 +18,7 @@ function SingleBook({ book, shelf, handleMoveBook }) {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${book.imageLinks.smallThumbnail})`,
+              backgroundImage: `url(${book.imageLinks ? book.imageLinks.smallThumbnail : ""})`,
             }}
           ></div>
           <BookShelfChanger value={value} handleChange={handleChange} />
