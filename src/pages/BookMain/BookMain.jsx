@@ -6,6 +6,8 @@ import debounce from "lodash/debounce";
 import { Route, Routes } from "react-router-dom";
 import BookSearch from "../BookSearch/BookSearch";
 
+import BookDetails from "../ProjectDetails/BookDetails";
+
 function BookMain() {
   const [showSearchPage, setShowSearchpage] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
@@ -89,6 +91,7 @@ function BookMain() {
             />
           }
         />
+        <Route path="bookDetails/:id" element={<BookDetails />} />
       </Routes>
     </div>
   );

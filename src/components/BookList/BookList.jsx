@@ -1,13 +1,12 @@
 import React from "react";
 import BookShelf from "../BookShelf/BookShelf";
 import { Link } from "react-router-dom";
+import PageTitle from "../PageTitle/PageTitle";
 
 function BookList({ handleSearch, books, bookshelves, handleMoveBook }) {
   return (
     <div className="list-books">
-      <div className="list-books-title">
-        <h1>MyReads</h1>
-      </div>
+      <PageTitle title="My Reads" />
       <div className="list-books-content">
         {bookshelves.map((shelf, index) => {
           return (
