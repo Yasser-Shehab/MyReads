@@ -1,12 +1,12 @@
 import React from "react";
 import SingleBook from "../SingleBook/SingleBook";
 
-function BookShelf({ books, shelf, handleMoveBook }) {
+function BookShelf({ books, shelf, shelfTitle, handleMoveBook }) {
   const booksBelongToShelf = books.filter((book) => book.shelf === shelf);
   return (
     <>
       <div className="bookshelf">
-        <h2 className="bookshelf-title">{shelf.name}</h2>
+        <h2 className="bookshelf-title">{shelfTitle}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
             {booksBelongToShelf.map((book) => {
