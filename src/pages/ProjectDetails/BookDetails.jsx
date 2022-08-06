@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import notFound from "./assets/Images/notFound.jpg";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { get } from "../../BooksAPI";
 
 import "./BookDetailsStyle.css";
 function BookDetails() {
   const [bookInfo, setBookInfo] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
   const params = useParams();
   console.log(params.id);
+
+  const goToPrevPage = () => {
+    navigate(-1);
+  };
 
   const fetchSingleBook = async () => {
     try {
@@ -39,6 +44,9 @@ function BookDetails() {
     return (
       <>
         <PageTitle title="Book Details" />
+        <button className="back-button" onClick={goToPrevPage}>
+          Back
+        </button>
         <article className="book-container">
           <div className="book-details">
             {bookInfo.imageLinks ? (
@@ -57,7 +65,7 @@ function BookDetails() {
                 <p>{bookInfo.title}</p>
               </div>
               <div className="details">
-                <h3>Categories</h3>
+                <h3>Categories :</h3>
                 {bookInfo.categories ? (
                   bookInfo.categories.map((data) => {
                     return <p>{data}</p>;
@@ -66,10 +74,18 @@ function BookDetails() {
                   <p>None</p>
                 )}
               </div>
-              <div className="details">
-                <h3>AverageRating :</h3>
-                <p>{bookInfo.averageRating}</p>
-              </div>
+              {bookInfo.averageRating ? (
+                <div className="details">
+                  <h3>AverageRating :</h3>
+                  <p>{bookInfo.averageRating}</p>
+                </div>
+              ) : (
+                <div className="details">
+                  <h3>Page Count :</h3>
+                  <p>{bookInfo.pageCount}</p>
+                </div>
+              )}
+
               <div className="details">
                 <h3>Language :</h3>
                 <p>{bookInfo.language.toUpperCase()}</p>
