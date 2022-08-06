@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SingleBook from "../../components/SingleBook/SingleBook";
 
 function BookSearch({ handleSearch, books, storedBooks, handleMoveBook, handleBookSearch }) {
   //Handling Both Change and Search
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
     handleBookSearch(event.target.value);
   };
 
-  const updatedBooks = books.map((book) => {
-    storedBooks.map((stored) => {
-      if (stored.id === book.id) {
-        book.shelf = stored.shelf;
-      }
-      return stored;
+  useEffect(() => {
+    const updatedBooks = books.map((book) => {
+      storedBooks.map((stored) => {
+        if (stored.id === book.id) {
+          book.shelf = stored.shelf;
+        }
+        return stored;
+      });
+      return book;
     });
-    return book;
-  });
+
+    setSearchResult(updatedBooks);
+  }, [books]);
 
   return (
     <div className="search-books">
@@ -37,8 +42,8 @@ function BookSearch({ handleSearch, books, storedBooks, handleMoveBook, handleBo
       </div>
       <div className="search-books-results">
         <ol className="books-grid">
-          {updatedBooks.length > 0 &&
-            updatedBooks.map((book) => {
+          {searchResult.length > 0 &&
+            searchResult.map((book) => {
               return (
                 <SingleBook
                   key={book.id}
