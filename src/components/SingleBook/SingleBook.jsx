@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BookShelfChanger from "../BookShelfChanger/BookShelfChanger";
 
-function SingleBook({ book, shelf, handleMoveBook }) {
+function SingleBook({ book, shelf, shelfTitle, handleMoveBook }) {
   const [value, setValue] = useState(shelf);
+  console.log(shelf);
   const { id, title, authors } = book;
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -26,7 +27,7 @@ function SingleBook({ book, shelf, handleMoveBook }) {
           </Link>
           <BookShelfChanger value={value} handleChange={handleChange} />
         </div>
-        <div className="book-title">{title}</div>
+        <div className="book-title">{shelfTitle}</div>
         <div className="book-authors">{authors && authors.map((name) => name)}</div>
       </div>
     </li>

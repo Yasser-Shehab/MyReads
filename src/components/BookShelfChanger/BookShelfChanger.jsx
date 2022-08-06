@@ -1,11 +1,9 @@
 import React from "react";
 
 function BookShelfChanger({ value, handleChange }) {
-  const { title, name } = value;
-
   return (
     <div className="book-shelf-changer">
-      <select value={title} onChange={handleChange}>
+      <select value={value} onChange={handleChange}>
         <option value="none" disabled>
           Move to...
         </option>

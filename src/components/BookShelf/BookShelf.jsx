@@ -2,7 +2,7 @@ import React from "react";
 import SingleBook from "../SingleBook/SingleBook";
 
 function BookShelf({ books, shelf, handleMoveBook }) {
-  const booksBelongToShelf = books.filter((book) => book.shelf === shelf.title);
+  const booksBelongToShelf = books.filter((book) => book.shelf === shelf);
   return (
     <>
       <div className="bookshelf">

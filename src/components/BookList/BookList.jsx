@@ -10,7 +10,13 @@ function BookList({ handleSearch, books, bookshelves, handleMoveBook }) {
       <div className="list-books-content">
         {bookshelves.map((shelf, index) => {
           return (
-            <BookShelf key={index} shelf={shelf} books={books} handleMoveBook={handleMoveBook} />
+            <BookShelf
+              key={index}
+              shelf={shelf.title}
+              shelfTitle={shelf.name}
+              books={books}
+              handleMoveBook={handleMoveBook}
+            />
           );
         })}
       </div>

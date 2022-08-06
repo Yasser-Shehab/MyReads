@@ -76,6 +76,7 @@ function BookMain() {
               handleSearch={handleSearch}
               handleBookSearch={delayedSearch}
               books={searchResult}
+              storedBooks={books}
               handleMoveBook={handleMoveBook}
             />
           }
